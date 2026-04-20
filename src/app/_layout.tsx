@@ -6,5 +6,8 @@ export default function RootLayout() {
       // headerTitle: 'Nutriledger',
       headerShown: false,
     }}
-  />;
+  >
+    <Stack.Screen name='index' />
+    <Stack.Screen name='meals' />
+  </Stack>;
 }
