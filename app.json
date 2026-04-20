@@ -39,6 +39,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "a90dde81-7aaa-44ce-a38e-0c800ffa4d19"
+      }
+    },
+    "owner": "xridu"
   }
 }
