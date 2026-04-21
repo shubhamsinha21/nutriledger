@@ -12,11 +12,13 @@ export type Meal = {
 
 const MEALS_KEY = "meals";
 
+// get meal functionality
 export const getMeals = async (): Promise<Meal[]> => {
   const data = await AsyncStorage.getItem(MEALS_KEY);
   return data ? JSON.parse(data) : [];
 };
 
+// add meal functionlity
 export const addMeal = async (
   meal: Omit<Meal, "id" | "createdAt">,
 ): Promise<Meal> => {
@@ -28,4 +30,11 @@ export const addMeal = async (
   };
   await AsyncStorage.setItem(MEALS_KEY, JSON.stringify([newMeal, ...meals]));
   return newMeal;
+};
+
+// delete meal functionality
+export const deleteMeal = async (id: string): Promise<void> => {
+  const meals = await getMeals();
+  const filtered = meals.filter((meal) => meal.id !== id);
+  await AsyncStorage.setItem(MEALS_KEY, JSON.stringify(filtered));
 };
