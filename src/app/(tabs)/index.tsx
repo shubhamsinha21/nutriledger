@@ -26,7 +26,7 @@ const loadMeals = async () => {
     <ScrollView style={globalStyles.container}>
       <Text style={globalStyles.title}>Nutriledger</Text>
       <HomeHeader />
-      <NutritionGrid/>
+      <NutritionGrid meals={meals}/>
       <RecentMeals meals={meals} />
     </ScrollView>
   )
