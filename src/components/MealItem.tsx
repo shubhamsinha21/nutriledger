@@ -20,7 +20,7 @@ export default function MealItem({
             <Text style={styles.nutritient}>Carbs: {carbs}g</Text>
             <Text style={styles.nutritient}>Fat: {fat}g</Text> */}
             <Text style={styles.nutritient}>
-                {calories} cal | {protein}g | {carbs}g | {fat}g
+                {calories} cal · {protein}g P · {carbs}g C · {fat}g F
             </Text>
         </View>
     )

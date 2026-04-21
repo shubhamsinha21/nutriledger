@@ -3,10 +3,10 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 export type Meal = {
   id: string;
   name: string;
-  calories: string;
-  protein: string;
-  carbs: string;
-  fat: string;
+  calories: number;
+  protein: number;
+  carbs: number;
+  fat: number;
   createdAt: string;
 };
 
