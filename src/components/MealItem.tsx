@@ -1,46 +1,66 @@
-import { StyleSheet, Text, View } from "react-native";
+import { deleteMeal } from "@/storage/meals";
+import { colors } from "@/styles/global";
+import { Alert, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 type MealItemProps = {
-    name: string;
-    calories: number;
-    protein: number;
-    carbs: number;
-    fat: number;
-}
+  id: string;
+  name: string;
+  calories: number;
+  protein: number;
+  carbs: number;
+  fat: number;
+  onDelete: () => void;
+};
 
 export default function MealItem({
-    name, calories, protein, carbs, fat
-}: MealItemProps){
+  id,
+  name,
+  calories,
+  protein,
+  carbs,
+  fat,
+  onDelete,
+}: MealItemProps) {
+  // update Meal item to have button for deleting meal
+  const handleLongPress = () => {
+    Alert.alert("Delete Meal", `Are you sure you want to delete "${name}"?`, [
+      { text: "Cancel", style: "cancel" },
+      {
+        text: "Delete",
+        style: "destructive",
+        onPress: async () => {
+          await deleteMeal(id);
+          onDelete();
+        },
+      },
+    ]);
+  };
 
-    return (
-        <View style={styles.container}>
-            <Text style={styles.name}>{name}</Text>
-            {/* <Text style={styles.nutritient}>Calories: {calories}</Text>
-            <Text style={styles.nutritient}>Protein: {protein}g</Text>
-            <Text style={styles.nutritient}>Carbs: {carbs}g</Text>
-            <Text style={styles.nutritient}>Fat: {fat}g</Text> */}
-            <Text style={styles.nutritient}>
-                {calories} cal · {protein}g P · {carbs}g C · {fat}g F
-            </Text>
-        </View>
-    )
+  return (
+    <TouchableOpacity style={styles.container} onLongPress={handleLongPress}>
+      <Text style={styles.name}>{name}</Text>
+      <Text style={styles.nutritient}>
+        {calories} cal • {protein}g P • {carbs}g C • {fat}g F
+      </Text>
+    </TouchableOpacity>
+  );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#16213e',
-        borderRadius: 10,
-        padding: 16,
-        marginBottom: 10,
-    },
-    name: {
-        fontSize: 16,
-        fontWeight: '600',
-        color: '#ffffff',
-    },
-    nutritient: {
-        fontSize: 13,
-        color: '#a0a0b0',
-        marginTop: 4
-    }
-})
+  container: {
+    backgroundColor: colors.surface,
+    borderRadius: 10,
+    padding: 16,
+    marginBottom: 10,
+  },
+  name: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: colors.text,
+  },
+  nutritient: {
+    fontSize: 13,
+    color: colors.textSecondary,
+    marginTop: 4,
+  },
+});
