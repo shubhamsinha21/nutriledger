@@ -39,8 +39,8 @@ export default function AddMealScreen() {
     setCarbs('');
     setFat('');
 
-    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)
     Alert.alert('Success', 'Meal added successfully!');
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)
 
 
     router.push('/');
