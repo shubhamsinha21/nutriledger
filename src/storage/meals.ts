@@ -38,3 +38,8 @@ export const deleteMeal = async (id: string): Promise<void> => {
   const filtered = meals.filter((meal) => meal.id !== id);
   await AsyncStorage.setItem(MEALS_KEY, JSON.stringify(filtered));
 };
+
+//  clear all meals functionality
+export const clearAllMeals = async (): Promise<void> => {
+  await AsyncStorage.removeItem(MEALS_KEY);
+};
