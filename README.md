@@ -22,9 +22,11 @@ NutriLedger enables users to log meals and track key nutritional metrics includi
 
 ## 📱 Screenshots
 
-![Home Screen](./assets/home.png)
-![All Meals](./assets/all-meals.png)
-![Add Meal](./assets/add-meal.png)
+<p align="center">
+  <img src="./assets/home.png" width="250" /><br/>Home
+  <img src="./assets/meals.png" width="250" /><br/>Meals
+  <img src="./assets/add-meal.png" width="250" /><br/>Add Meal
+</p>
 
 ---
 
