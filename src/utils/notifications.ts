@@ -43,6 +43,6 @@ export const scheduleMealReminders = async () => {
   });
 };
 
-export const cancelMealRemnders = async () => {
+export const cancelMealReminders = async () => {
   await Notifications.cancelAllScheduledNotificationsAsync();
 };
