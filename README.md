@@ -34,7 +34,10 @@ NutriLedger enables users to log meals and track key nutritional metrics includi
 
 - React Native
 - JavaScript / TypeScript
-- Expo (if used)
+- Expo notification
+- Expo Clipboard
+- EAS build
+- Expo Haptics
 - Async Storage / Local State Management
 
 ---
