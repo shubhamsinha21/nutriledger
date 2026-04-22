@@ -1,13 +1,13 @@
 import { StyleSheet } from "react-native";
 
 export const colors = {
-  background: "#1a1a2e",
-  header: "#242444",
-  surface: "#2a2a4a",
-  primary: "#4fc3f7",
-  text: "#ffffff",
-  textSecondary: "#a0a0b0",
-  alert: "#ff5252",
+  background: "#0B0F14",
+  header: "#111827",
+  surface: "#161B22",
+  primary: "#22C55E",
+  text: "#E6EDF3",
+  textSecondary: "#8B949E",
+  alert: "#EF4444",
 };
 
 export const globalStyles = StyleSheet.create({
@@ -26,7 +26,6 @@ export const globalStyles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "600",
     color: colors.textSecondary,
-    marginTop: 30,
     marginBottom: 16,
   },
   empty: {
