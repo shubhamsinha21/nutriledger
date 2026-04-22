@@ -1,3 +1,4 @@
+import CopyButton from "@/components/CopyButton";
 import HomeHeader from "@/components/HomeHeader";
 import NutritionGrid from "@/components/NutritionGrid";
 import RecentMeals from "@/components/RecentMeals";
@@ -32,7 +33,9 @@ const loadMeals = async () => {
       </View>
       <HomeHeader />
       <NutritionGrid meals={meals}/>
+      <CopyButton meals={meals}/>
       <RecentMeals meals={meals} onDelete={loadMeals} />
     </ScrollView>
   )
 }
+
